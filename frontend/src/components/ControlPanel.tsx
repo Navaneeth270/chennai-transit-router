@@ -229,8 +229,8 @@ export default function ControlPanel({
     <motion.div
       initial={{ x: -420, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      exit={{ x: -420, opacity: 0, transition: { duration: 0.25, ease: "easeIn" } }}
-      transition={{ type: "spring", stiffness: 70, damping: 18, delay: 0.1 }}
+      exit={{ x: -420, opacity: 0, transition: { duration: 0.25, ease: "easeIn" as const } }}
+      transition={{ type: "spring" as const, stiffness: 70, damping: 18, delay: 0.1 }}
       className="absolute top-4 left-4 bottom-4 w-[380px] z-20 glass-panel flex flex-col"
     >
       {/* Header */}
@@ -414,7 +414,7 @@ export default function ControlPanel({
               onClick={onToggleDisruptions}
               className={`relative w-10 h-[22px] rounded-full transition-colors duration-300 ${disruptionsEnabled ? "bg-amber-500/80" : "bg-white/10"}`}
             >
-              <motion.div animate={{ x: disruptionsEnabled ? 20 : 2 }} transition={{ type: "spring", stiffness: 500, damping: 30 }} className="absolute top-[3px] w-4 h-4 rounded-full bg-white shadow-sm" />
+              <motion.div animate={{ x: disruptionsEnabled ? 20 : 2 }} transition={{ type: "spring" as const, stiffness: 500, damping: 30 }} className="absolute top-[3px] w-4 h-4 rounded-full bg-white shadow-sm" />
             </button>
           </div>
         </div>

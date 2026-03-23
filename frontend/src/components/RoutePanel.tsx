@@ -30,12 +30,12 @@ const panelVariants = {
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 65, damping: 18, delay: 0.3 },
+    transition: { type: "spring" as const, stiffness: 65, damping: 18, delay: 0.3 },
   },
   exit: {
     x: 400,
     opacity: 0,
-    transition: { duration: 0.25, ease: "easeIn" },
+    transition: { duration: 0.25, ease: "easeIn" as const },
   },
 };
 
@@ -47,7 +47,7 @@ const staggerContainer = {
 
 const staggerItem = {
   hidden: { opacity: 0, x: 20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.3, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.3, ease: "easeOut" as const } },
 };
 
 export default function RoutePanel({ route, onClose, walkingLegs = [] }: Props) {
@@ -207,7 +207,7 @@ export default function RoutePanel({ route, onClose, walkingLegs = [] }: Props) 
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${transitBarPercent}%` }}
-                  transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+                  transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" as const }}
                   className="h-full rounded-full"
                   style={{ backgroundColor: meta.color }}
                 />
@@ -225,7 +225,7 @@ export default function RoutePanel({ route, onClose, walkingLegs = [] }: Props) 
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
-                  transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+                  transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" as const }}
                   className="h-full rounded-full bg-red-500/60"
                 />
               </div>
@@ -482,7 +482,7 @@ function SegmentAccordion({
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.25, ease: "easeInOut" }}
+              transition={{ duration: 0.25, ease: "easeInOut" as const }}
               className="overflow-hidden"
             >
               <div className="px-3 pb-3 ml-9 border-t border-white/4 pt-2 space-y-0.5">

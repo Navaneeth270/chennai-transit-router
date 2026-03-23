@@ -64,8 +64,8 @@ export default function ComparePanel({ results, onClose, highlightedAlgo, onHigh
   return (
     <motion.div
       initial={{ x: 400, opacity: 0 }}
-      animate={{ x: 0, opacity: 1, transition: { type: "spring", stiffness: 65, damping: 18, delay: 0.15 } }}
-      exit={{ x: 400, opacity: 0, transition: { duration: 0.25, ease: "easeIn" } }}
+      animate={{ x: 0, opacity: 1, transition: { type: "spring" as const, stiffness: 65, damping: 18, delay: 0.15 } }}
+      exit={{ x: 400, opacity: 0, transition: { duration: 0.25, ease: "easeIn" as const } }}
       className="absolute top-4 right-4 bottom-4 w-[400px] z-20 glass-panel flex flex-col overflow-hidden"
     >
       {/* Header */}
